@@ -1,0 +1,51 @@
+<%= form_for @changeset, @action, [as: "order", method: "put"], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, "patient_id", "Patient id", class: "control-label" %>
+    <%= number_input f, :patient_id, class: "form-control" %>
+    <%= error_tag f, :patient_id %>
+  </div>
+
+  <%= if is_pharmacy?(@agent) do %>
+    <%= hidden_input f, :pharmacy_id, value: @agent.pharmacy.id, class: "form-control" %>
+  <% else %>
+    <div class="form-group">
+      <%= label f, "pharmacy_id", "Pharmacy id", class: "control-label" %>
+      <%= number_input f, :pharmacy_id, class: "form-control" %>
+      <%= error_tag f, :pharmacy_id %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, "courier_id", "Courier id", class: "control-label" %>
+    <%= number_input f, :courier_id, class: "form-control" %>
+    <%= error_tag f, :courier_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "order_state", "Order state", class: "control-label" %>
+    <%= text_input f, :order_state_description, class: "form-control" %>
+    <%= error_tag f, :order_state %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "pickup_date", "Pickup date", class: "control-label" %>
+    <%= date_select f, :pickup_date, class: "form-control" %>
+    <%= error_tag f, :pickup_date %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, "pickup_time", "Pickup time", class: "control-label" %>
+    <%= time_select f, :pickup_time, class: "form-control" %>
+    <%= error_tag f, :pickup_time %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

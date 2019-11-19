@@ -1,0 +1,11 @@
+<% error = get_flash(@conn, :error) %>
+<%= if is_list(error) do %>
+  <p class="alert alert-danger" role="alert">
+    Errors:<br>
+    <%= for e <- error do %>
+      <%= e %><br>
+    <% end %>
+  </p>
+<% else %>
+  <p class="alert alert-danger" role="alert"><%= error %></p>
+<% end %>

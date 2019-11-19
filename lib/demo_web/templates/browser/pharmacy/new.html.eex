@@ -1,0 +1,5 @@
+<h2>New Pharmacy</h2>
+
+<%= render "form.html", Map.put(assigns, :action, pharmacy_path(@conn, :create)) %>
+
+<span><%= link "Back", to: pharmacy_path(@conn, :index) %></span>

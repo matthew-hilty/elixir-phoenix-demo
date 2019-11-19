@@ -1,0 +1,29 @@
+<h2>Listing Patients</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for patient <- @patients do %>
+    <tr>
+      <td><%= patient.id %></td>
+      <td><%= patient.name %></td>
+      <td><%= patient.address %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: patient_path(@conn, :show, patient), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: patient_path(@conn, :delete, patient), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Patient", to: patient_path(@conn, :new) %></span>

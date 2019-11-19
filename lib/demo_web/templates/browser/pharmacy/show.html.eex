@@ -1,0 +1,32 @@
+<h2>Show Pharmacy</h2>
+
+<ul>
+
+  <li>
+    <strong>ID:</strong>
+    <%= @pharmacy.id %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pharmacy.name %>
+  </li>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @pharmacy.username %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @pharmacy.address %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @pharmacy.email %>
+  </li>
+
+</ul>
+
+<span><%= link "Back", to: pharmacy_path(@conn, :index) %></span>

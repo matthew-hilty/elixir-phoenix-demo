@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to Matthew Hilty's Phoenix demo!" %></h2>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>Resources</h4>
+    <ul>
+      <li>
+        <a href="<%= order_path(@conn, :index) %>">Orders</a>
+      </li>
+      <li>
+        <a href="<%= administrator_path(@conn, :index) %>">Administrators</a>
+      </li>
+      <li>
+        <a href="<%= pharmacy_path(@conn, :index) %>">Pharmacies</a>
+      </li>
+      <li>
+        <a href="<%= courier_path(@conn, :index) %>">Couriers</a>
+      </li>
+      <li>
+        <a href="<%= patient_path(@conn, :index) %>">Patients</a>
+      </li>
+    </ul>
+  </div>
+</div>

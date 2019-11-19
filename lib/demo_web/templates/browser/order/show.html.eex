@@ -1,0 +1,43 @@
+<h2>Show Order</h2>
+
+<ul>
+
+  <li>
+    <strong>ID:</strong>
+    <%= @order.id %>
+  </li>
+
+  <li>
+    <strong>Patient:</strong>
+    <%= @order.patient.name %>
+  </li>
+
+  <li>
+    <strong>Pharmacy:</strong>
+    <%= @order.pharmacy.name %>
+  </li>
+
+  <li>
+    <strong>Courier:</strong>
+    <%= @order.courier.name %>
+  </li>
+
+  <li>
+    <strong>Order state:</strong>
+    <%= @order.order_state.description %>
+  </li>
+
+  <li>
+    <strong>Pickup date:</strong>
+    <%= @order.pickup_date %>
+  </li>
+
+  <li>
+    <strong>Pickup time:</strong>
+    <%= format_time(@order.pickup_time) %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: order_path(@conn, :edit, @order) %></span>
+<span><%= link "Back", to: order_path(@conn, :index) %></span>

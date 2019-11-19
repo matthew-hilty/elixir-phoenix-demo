@@ -1,0 +1,22 @@
+<h2>Show Patient</h2>
+
+<ul>
+
+  <li>
+    <strong>ID:</strong>
+    <%= @patient.id %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @patient.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @patient.address %>
+  </li>
+
+</ul>
+
+<span><%= link "Back", to: patient_path(@conn, :index) %></span>

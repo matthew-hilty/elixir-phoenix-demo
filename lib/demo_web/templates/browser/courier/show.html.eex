@@ -1,0 +1,32 @@
+<h2>Show Courier</h2>
+
+<ul>
+
+  <li>
+    <strong>ID:</strong>
+    <%= @courier.id %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @courier.name %>
+  </li>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @courier.username %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @courier.address %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @courier.email %>
+  </li>
+
+</ul>
+
+<span><%= link "Back", to: courier_path(@conn, :index) %></span>

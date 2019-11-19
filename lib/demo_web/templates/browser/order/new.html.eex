@@ -1,0 +1,5 @@
+<h2>New Order</h2>
+
+<%= render "new_form.html", Map.put(assigns, :action, order_path(@conn, :create)) %>
+
+<span><%= link "Back", to: order_path(@conn, :index) %></span>
